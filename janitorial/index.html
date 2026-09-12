@@ -13,6 +13,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -73,6 +77,11 @@
       text-decoration: none;
       border-radius: 7px;
       font-weight: 700;
+      transition: opacity 0.2s ease;
+    }
+
+    .button:hover {
+      opacity: 0.88;
     }
 
     .results {
@@ -82,10 +91,19 @@
 
     .results h2,
     .how h2,
-    .pricing h2 {
+    .pricing h2,
+    .example h2 {
       text-align: center;
       font-size: 34px;
-      margin-bottom: 38px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #6b7280;
+      margin: 0 auto 34px;
+      max-width: 700px;
     }
 
     .result-grid {
@@ -113,8 +131,68 @@
       margin-top: 5px;
     }
 
+    .example {
+      padding: 80px 0;
+    }
+
+    .example-card {
+      max-width: 720px;
+      margin: 0 auto;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 30px;
+      background: #ffffff;
+    }
+
+    .example-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .example-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 11px 0;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .example-row:last-of-type {
+      border-bottom: none;
+    }
+
+    .example-label {
+      color: #6b7280;
+    }
+
+    .example-value {
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .alert-box {
+      margin-top: 24px;
+      padding: 20px;
+      border-radius: 10px;
+      background: #f6f7f8;
+    }
+
+    .alert-box strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .impact {
+      font-size: 26px;
+      font-weight: 750;
+      margin-top: 8px;
+    }
+
     .how {
       padding: 80px 0;
+      background: #f6f7f8;
     }
 
     .steps {
@@ -140,7 +218,6 @@
 
     .pricing {
       padding: 80px 0;
-      background: #f6f7f8;
       text-align: center;
     }
 
@@ -157,9 +234,16 @@
     }
 
     .founding {
-      max-width: 560px;
+      max-width: 600px;
       margin: 0 auto 28px;
       color: #4b5563;
+    }
+
+    .disclaimer {
+      max-width: 650px;
+      margin: 24px auto 0;
+      font-size: 13px;
+      color: #7a828a;
     }
 
     footer {
@@ -167,6 +251,7 @@
       text-align: center;
       font-size: 13px;
       color: #737b84;
+      border-top: 1px solid #eeeeee;
     }
 
     @media (max-width: 700px) {
@@ -177,6 +262,15 @@
 
       .hero {
         padding: 60px 0;
+      }
+
+      .example-row {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .example-value {
+        text-align: left;
       }
     }
   </style>
@@ -202,12 +296,15 @@
     </h1>
 
     <p>
-      Contract Profit Guard analyzes your recurring commercial cleaning
-      contracts against current labor costs, service requirements and
-      renewal terms to identify accounts that need attention.
+      Contract Profit Guard is designed to help commercial cleaning companies
+      identify recurring customer contracts where labor costs, service demands,
+      pricing terms, or upcoming renewals may be putting margin at risk.
     </p>
 
-    <a class="button" href="#founding">
+    <a class="button"
+       href="https://tally.so/r/68gxeY"
+       target="_blank"
+       rel="noopener">
       Apply for Founding Access
     </a>
 
@@ -217,7 +314,13 @@
 <section class="results">
   <div class="container">
 
-    <h2>See where your contract economics have changed.</h2>
+    <h2>
+      Here's what Contract Profit Guard is designed to surface.
+    </h2>
+
+    <p class="section-subtitle">
+      Illustrative product example
+    </p>
 
     <div class="result-grid">
 
@@ -246,6 +349,62 @@
   </div>
 </section>
 
+<section class="example">
+  <div class="container">
+
+    <h2>See the problem before renewal.</h2>
+
+    <p class="section-subtitle">
+      Illustrative account example
+    </p>
+
+    <div class="example-card">
+
+      <div class="example-title">
+        Midtown Office Complex
+      </div>
+
+      <div class="example-row">
+        <div class="example-label">Current contract price</div>
+        <div class="example-value">$8,600 / month</div>
+      </div>
+
+      <div class="example-row">
+        <div class="example-label">Estimated current delivery cost</div>
+        <div class="example-value">$7,280 / month</div>
+      </div>
+
+      <div class="example-row">
+        <div class="example-label">Current gross margin</div>
+        <div class="example-value">15.3%</div>
+      </div>
+
+      <div class="example-row">
+        <div class="example-label">Renewal</div>
+        <div class="example-value">61 days</div>
+      </div>
+
+      <div class="alert-box">
+        <strong>Pricing opportunity detected</strong>
+
+        Contract terms indicate an annual price adjustment may be available
+        at renewal. Current operating economics suggest this account should
+        be reviewed before renewal.
+
+        <div class="impact">
+          Suggested review price: $9,340 / month
+        </div>
+
+        <div class="impact">
+          Potential annual improvement: +$8,880
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 <section class="how">
   <div class="container">
 
@@ -255,28 +414,29 @@
 
       <div class="step">
         <div class="step-number">01</div>
-        <h3>Connect your contracts</h3>
+        <h3>Provide your contracts</h3>
         <p>
-          Provide your recurring commercial cleaning agreements and
-          basic account economics.
+          Provide your recurring commercial cleaning agreements and basic
+          account economics.
         </p>
       </div>
 
       <div class="step">
         <div class="step-number">02</div>
-        <h3>Find margin problems</h3>
+        <h3>Identify margin problems</h3>
         <p>
-          Contract Profit Guard identifies accounts affected by labor
-          costs, service requirements, pricing terms and upcoming renewals.
+          Contract Profit Guard is designed to flag accounts affected by
+          labor costs, service requirements, pricing terms, and upcoming
+          renewals.
         </p>
       </div>
 
       <div class="step">
         <div class="step-number">03</div>
-        <h3>Take action</h3>
+        <h3>Review opportunities</h3>
         <p>
-          Review the accounts that need attention and the potential
-          economic impact before your next renewal or pricing decision.
+          See which accounts may need attention and the potential economic
+          impact before your next renewal or pricing decision.
         </p>
       </div>
 
@@ -298,13 +458,21 @@
 
     <p class="founding">
       Contract Profit Guard is currently in development.
-      Parapet Labs is selecting a limited number of commercial
-      cleaning companies for founding access.
+      Parapet Labs is selecting a limited number of commercial cleaning
+      companies to help shape the product and participate in founding access.
     </p>
 
-    <a class="button" href="#">
+    <a class="button"
+       href="https://tally.so/r/68gxeY"
+       target="_blank"
+       rel="noopener">
       Apply for Founding Access
     </a>
+
+    <p class="disclaimer">
+      Examples shown on this page are illustrative product demonstrations
+      and are not customer results or guarantees of savings or profit improvement.
+    </p>
 
   </div>
 </section>
